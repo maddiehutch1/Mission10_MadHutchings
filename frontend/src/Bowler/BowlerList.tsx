@@ -6,7 +6,7 @@ function BowlerList() {
 
   useEffect(() => {
     const fetchBowlerData = async () => {
-      const rsp = await fetch(""); // PUT IN LOCAL HOST ADDRESS!!
+      const rsp = await fetch("http://localhost:5062/bowler"); // PUT IN LOCAL HOST ADDRESS!!
       const b = await rsp.json();
       setBowlerData(b);
     };
@@ -16,7 +16,7 @@ function BowlerList() {
   return (
     <>
       <div className="row">
-        <h4 className="text-center">Best Marriott Food</h4>
+        <h4 className="text-center">Bowler Roster</h4>
       </div>
       <table className="table table-bordered">
         <thead>
@@ -34,16 +34,16 @@ function BowlerList() {
         </thead>
         <tbody>
           {bowlerData.map((b) => (
-            <tr key={b.BowlerID}>
-              <td>{b.BowlerFirstName}</td>
-              <td>{b.BowlerMiddleInit}</td>
-              <td>{b.BowlerLastName}</td>
-              <td>{b.TeamID}</td>
-              <td>{b.BowlerAddress}</td>
-              <td>{b.BowlerCity}</td>
-              <td>{b.BowlerState}</td>
-              <td>{b.BowlerZip}</td>
-              <td>{b.BowlerPhoneNumber}</td>
+            <tr key={b.bowlerId}>
+              <td>{b.bowlerFirstName}</td>
+              <td>{b.bowlerMiddleInit}</td>
+              <td>{b.bowlerLastName}</td>
+              <td>{b.team.teamName}</td>
+              <td>{b.bowlerAddress}</td>
+              <td>{b.bowlerCity}</td>
+              <td>{b.bowlerState}</td>
+              <td>{b.bowlerZip}</td>
+              <td>{b.bowlerPhoneNumber}</td>
             </tr>
           ))}
         </tbody>
