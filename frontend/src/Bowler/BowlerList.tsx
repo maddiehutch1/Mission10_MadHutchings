@@ -3,17 +3,18 @@ import { Bowler } from "../types/Bowlers";
 import "../App.css";
 
 function BowlerList(props: any) {
-  const [bowlerData, setBowlerData] = useState<Bowler[]>([]);
+  const [bowlerData, setBowlerData] = useState<Bowler[]>([]); // create variables retrieves data and sets data of bowler
 
   useEffect(() => {
     const fetchBowlerData = async () => {
-      const rsp = await fetch("http://localhost:5062/bowler"); // PUT IN LOCAL HOST ADDRESS!!
+      const rsp = await fetch("http://localhost:5062/bowler"); // here is the link that connects to the API, only do it once, not repeatedly
       const b = await rsp.json();
       setBowlerData(b);
     };
     fetchBowlerData();
   }, []);
 
+  // table is returned, calling from the bowlerData that was fetched from the ts file
   return (
     <>
       <br />
@@ -32,6 +33,7 @@ function BowlerList(props: any) {
           </tr>
         </thead>
         <tbody>
+          {/* map out all the variables pulled from bowlerData */}
           {bowlerData.map((b) => (
             <tr key={b.bowlerId}>
               <td>{b.bowlerFirstName}</td>

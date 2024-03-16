@@ -1,4 +1,6 @@
 import logo from "./bowlingLogo.png";
+
+// use properties to connect additional variables from App.tsx to this file
 function Header(props: any) {
   return (
     <>
