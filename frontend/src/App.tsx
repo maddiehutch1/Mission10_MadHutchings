@@ -6,7 +6,7 @@ import BowlerList from "./Bowler/BowlerList";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header title="Bowler Competition Roster" />
       <BowlerList />
     </div>
   );

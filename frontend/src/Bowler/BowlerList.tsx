@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Bowler } from "../types/Bowlers";
+import "../App.css";
 
-function BowlerList() {
+function BowlerList(props: any) {
   const [bowlerData, setBowlerData] = useState<Bowler[]>([]);
 
   useEffect(() => {
@@ -15,11 +16,9 @@ function BowlerList() {
 
   return (
     <>
-      <div className="row">
-        <h4 className="text-center">Bowler Roster</h4>
-      </div>
+      <br />
       <table className="table table-bordered">
-        <thead>
+        <thead className="thead">
           <tr>
             <th>First Name</th>
             <th>Middle Initial</th>
