@@ -18,6 +18,10 @@ function Header(props: any) {
         </div>
         <div className="col subtitle" style={{ fontStyle: "italic" }}>
           <h1 className="text-white">{props.title}</h1>
+          <h4>
+            Find information of your top competitors from the top teams! Only
+            Marlin and Sharks teams shown.
+          </h4>
         </div>
       </header>
     </>
